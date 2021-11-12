@@ -1,5 +1,4 @@
 solutions/
 monster_game.code-workspace
-monstergame.pdf
-monstergame.odt
-metodos.odt
+documents/*.pdf
+documents/*.odt
