@@ -1,16 +1,67 @@
-// // Objeto monster
+// Conseguir nombre del monstruo
+// const numberOfMonsters = () => {
+//   const nMonst = parseInt(Math.random() * 1) + 3;
+//   for (let units = 0; units < nMonst; units++) {
+//     const mName = [('Gwyn', 'Orstein', 'Smoug')];
+//     console.log(mName);
+//   }
+// };
+
+// numberOfMonsters();
+
+// Objeto monster
+
+//constructor function
 let monster = {
-  name: 'monster',
+  name: '',
   health: 100,
-  damage: parseInt(Math.random() * 10) + 10,
+  damage: 0,
+  attack: () => {
+    this.damage = parseInt(Math.random() * 10) + 10;
+  },
 };
 
 // objeto player
 let player = {
-  name: 'player',
+  name: 'pname',
   health: 100,
   potion: 2,
   damage: parseInt(Math.random() * 10) + 10,
+};
+// mensajes
+// player victory
+const playerVictory = () => {
+  const victory = '\u270C';
+  console.log(
+    `\n Victory !${player.name} defeated all the monsters ${victory}`
+  );
+  // separación de 2 segundos
+  showGlobalStadistics();
+};
+
+// player defeated
+const playerDefeated = () => {
+  const dead = '\u2620';
+  console.log(` ${player.name} died!${dead}`);
+  showGlobalStadistics();
+};
+
+// estadisticas totales
+showGlobalStadistics = () => {
+  console.log(
+    `\n
+    *********************\n
+    ** GAME STADISTICS **\n
+    *********************\n
+
+    ${player.name} weak attacks: ${globalStadistics.playerAttacks}.\n
+    Monsters attacks: ${globalStadistics.monstersAttacks}.\n
+    ${player.name}'s heals: ${globalStadistics.potionsConsumed}.\n
+    Total damage mady by ${player.name}:${globalStadistics.playerTotalDamage}.\n
+    Total damage mady by monsters:${globalStadistics.monstersTotalDamage}.\n`
+  );
+  //SEPARACIÓN DE 2 SEGUNDOS
+  console.log('GAME OVER');
 };
 
 // objeto estadisticas globales
@@ -52,7 +103,10 @@ function playerAction_nested() {
   }
 }
 
-playerAction();
-playerAction_nested();
-console.log(player);
-console.log(monster);
+// playerAction();
+// playerAction_nested();
+// console.log(player);
+// console.log(monster);
+// showGlobalStadistics();
+
+playerDefeated();
