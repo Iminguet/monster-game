@@ -1,12 +1,7 @@
-//Mensage de prueba y testeo
-//
-console.log(
-  `Salud de ${monster.name} ES: ${
-    monster.health
-  } \n JUgador ha dado un golpe de ${player.damage()} \nla salud despues del golpe es: ${
-    monster.health
-  }`
-);
+export { globalStadistics };
+import { player } from './player.mjs';
+import { monster } from './monsters.mjs';
+import { managemenstadistics } from './player_monster_actions.mjs';
 
 // mensajes
 // player victory
@@ -63,12 +58,12 @@ const globalStadistics = {
 
 // objeto estadisticas por round
 const roundStadistics = {
-  playerName: 'player',
-  playerHealth: 0,
-  remainingPotions: 0,
-  monsterName: 'Monster',
-  monsterHealth: 0,
-  remainingMonsters: 0,
+  playerName: player.name,
+  playerHealth: player.health,
+  remainingPotions: player.potion,
+  monsterName: monster.name,
+  monsterHealth: monster.health,
+  remainingMonsters: [],
 };
 
 // acciones de player

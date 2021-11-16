@@ -1,5 +1,8 @@
 // Player object
 //
+export { player, healing };
+import { playerAttack } from './player_monster_actions.mjs';
+//
 const player = {
   name: 'pname',
   health: 100,
@@ -22,7 +25,7 @@ function healing() {
       player.health = 100;
     }
   } else {
-    console.log('esa peña'); // diseñar funcion de PLAYER.ATAQUE
+    playerAttack();
   }
 }
 // Function to validate if there is potions available

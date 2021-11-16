@@ -1,5 +1,7 @@
 // Function that chooses the number of monsters to be confronted
 
+export { monster };
+
 function randomlyGeneratedNumberOfMonsters() {
   return Math.floor(Math.random() * (2 - 0 + 1) + 0);
 }
