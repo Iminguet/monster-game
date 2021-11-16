@@ -11,23 +11,60 @@
 
 // Objeto monster
 
-//constructor function
-let monster = {
-  name: '',
-  health: 100,
-  damage: 0,
-  attack: () => {
-    this.damage = parseInt(Math.random() * 10) + 10;
-  },
-};
+// constructor function
+let monsterName = 'Antofagasto';
+
+function Monster(monsterName) {
+  this.name = monsterName;
+  this.health = 100;
+  this.monsterMaxAttack = 20;
+  this.monsterMinAttack = 10;
+  this.damage = () => {
+    return Math.floor(
+      Math.random() * (this.monsterMaxAttack - this.monsterMinAttack + 1) +
+        this.monsterMinAttack
+    );
+  };
+}
+// Creando monstruos, listado y asociando
+const defaultNames = ['Gwyn', 'Orstein', 'Smoug', 'Izalith', 'Nito'];
+const monstruos = [];
+const numeroMonstros = parseInt(Math.random() * 3) + 1;
+for (let i = 0; i <= numeroMonstros; i++) {
+  const nuevoMOnstruo = new Monster(defaultNames[i]);
+  monstruos.push(nuevoMOnstruo);
+}
+// ataque monster
+console.log(monstruos[0].damage());
 
 // objeto player
-let player = {
+const player = {
   name: 'pname',
   health: 100,
   potion: 2,
-  damage: parseInt(Math.random() * 10) + 10,
+  damage: () => parseInt(Math.random() * 10) + 10,
 };
+
+// prueba DE DAÑO A OBJETO PLAYER
+console.log(player.health);
+player.health = player.health - monstruos[0].damage();
+console.log(player.health);
+///////////////////////////////////
+
+// prueba de como baja la salud
+
+const mon02 = monstruos.pop();
+
+while (player.health > 0 && mon02.health > 0) {
+  mon02.health = mon02.health - player.damage();
+  if (mon02.health > 0) {
+    player.health = player.health - mon02.damage();
+  }
+
+  console.log(' esto es el daño recibdo por monter', mon02.health);
+  console.log('Este es el dañor recibido por player', player.health);
+}
+
 // mensajes
 // player victory
 const playerVictory = () => {
@@ -47,7 +84,7 @@ const playerDefeated = () => {
 };
 
 // estadisticas totales
-showGlobalStadistics = () => {
+let showGlobalStadistics = () => {
   console.log(
     `\n
     *********************\n
@@ -60,25 +97,32 @@ showGlobalStadistics = () => {
     Total damage mady by ${player.name}:${globalStadistics.playerTotalDamage}.\n
     Total damage mady by monsters:${globalStadistics.monstersTotalDamage}.\n`
   );
-  //SEPARACIÓN DE 2 SEGUNDOS
+  wait2Seconds();
+  showGameOverMessage();
+};
+function wait2Seconds() {
+  setTimeout(2000);
+}
+
+const showGameOverMessage = () => {
+  //Esperar 2 segundos
   console.log('GAME OVER');
 };
 
 // objeto estadisticas globales
-let globalStadistics = {
-  playerAttacks: 0,
-  monstersAttacks: 0,
-  potionsConsumed: 0,
-  playerTotalDamage: 0,
-  monstersTotalDamage: 0,
+const globalStadistics = {
+  playerAttacks: [],
+  monstersAttacks: [],
+  potionsConsumed: [],
+  playerTotalDamage: [],
+  monstersTotalDamage: [],
 };
 
 // objeto estadisticas por round
-let roundStadistics = {
+const roundStadistics = {
   playerName: 'player',
   playerHealth: 0,
   remainingPotions: 0,
-
   monsterName: 'Monster',
   monsterHealth: 0,
   remainingMonsters: 0,
@@ -109,4 +153,5 @@ function playerAction_nested() {
 // console.log(monster);
 // showGlobalStadistics();
 
-playerDefeated();
+// playerDefeated();
+// playerVictory();
