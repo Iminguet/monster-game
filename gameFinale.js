@@ -1,14 +1,4 @@
-const defaultNames = ['Gwyn', 'Furtivo pigmeo', 'Izalith'];
-
-const monsters = [];
-
-const numberOfMonsters = Math.floor(Math.random() * (2 - 0 + 1) + 0);
-
-for (let i = 0; i <= numberOfMonsters; i++) {
-  const newMonster = new Monster(defaultNames[i]);
-  monsters.push(newMonster);
-}
-
+// constructor objeto monstruo.
 function Monster(monsterName) {
   this.name = monsterName;
   this.health = 100;
@@ -22,14 +12,53 @@ function Monster(monsterName) {
   };
 }
 
+// array con nombres por defecto
+
+// función para elegir el número de monstruos disponibles.
+
+const howMannyMonsters = function howMannyMonsters() {
+  const numberOfMonsters = Math.floor(Math.random() * (2 - 0 + 1) + 0);
+  return numberOfMonsters;
+};
+
+// funcion para asignarles nombre
+const names = function givingNames(numberOfMonsters) {
+  const defaultNames = ['Gwyn', 'Furtivo pigmeo', 'Izalith'];
+  const monsters = [];
+  for (let i = 0; i <= numberOfMonsters; i++) {
+    const newMonster = new Monster(defaultNames[i]);
+    monsters.push(newMonster);
+  }
+  return monsters;
+};
+
 const monster = monsters.pop();
+console.log(monster);
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
 
-// Creando monstruos, listado y asociando
-
-// ataque monster
-// console.log(monstruos[0].damage());
-
-// objeto player
 const player = {
   name: 'pname',
   health: 100,
