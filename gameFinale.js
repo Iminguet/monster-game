@@ -1,102 +1,12 @@
-// constructor objeto monstruo.
-function Monster(monsterName) {
-  this.name = monsterName;
-  this.health = 100;
-  this.monsterMaxAttack = 20;
-  this.monsterMinAttack = 10;
-  this.damage = () => {
-    return parseInt(
-      Math.random() * (this.monsterMaxAttack - this.monsterMinAttack + 1) +
-        this.monsterMinAttack
-    );
-  };
-}
-
-// array con nombres por defecto
-
-// función para elegir el número de monstruos disponibles.
-
-const howMannyMonsters = function howMannyMonsters() {
-  const numberOfMonsters = Math.floor(Math.random() * (2 - 0 + 1) + 0);
-  return numberOfMonsters;
-};
-
-// funcion para asignarles nombre
-const names = function givingNames(numberOfMonsters) {
-  const defaultNames = ['Gwyn', 'Furtivo pigmeo', 'Izalith'];
-  const monsters = [];
-  for (let i = 0; i <= numberOfMonsters; i++) {
-    const newMonster = new Monster(defaultNames[i]);
-    monsters.push(newMonster);
-  }
-  return monsters;
-};
-
-const monster = monsters.pop();
-console.log(monster);
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-// *
-
-const player = {
-  name: 'pname',
-  health: 100,
-  potion: 2,
-  MaximunAttack: 20,
-  MinimunAttack: 10,
-  damage: () =>
-    parseInt(
-      Math.random() * (player.MaximunAttack - player.MinimunAttack + 1) +
-        player.MinimunAttack
-    ),
-};
-
-// prueba DE DAÑO A OBJETO PLAYER
-// console.log(player.health);
-// player.health = player.health - monstruos[0].damage();
-// console.log(player.health);
-///////////////////////////////////
-
-// prueba de como baja la salud
-
-while (player.health > 0 && monster.health > 0) {
-  monster.health = monster.health - player.damage();
-  if (monster.health > 0) {
-    player.health = player.health - monster.damage();
-  }
-
-  console.log(
-    `Salud de ${monster.name} ES: ${
-      monster.health
-    } \n JUgador ha dado un golpe de ${player.damage()} \nla salud despues del golpe es: ${
-      monster.health
-    }`
-  );
-  // console.log('Daño hecho por monster', mon02.damage());
-  // console.log('Este es el dañor recibido por player', player.health);
-  // console.log('Daño hecho por player', player.damage());
-}
+//Mensage de prueba y testeo
+//
+console.log(
+  `Salud de ${monster.name} ES: ${
+    monster.health
+  } \n JUgador ha dado un golpe de ${player.damage()} \nla salud despues del golpe es: ${
+    monster.health
+  }`
+);
 
 // mensajes
 // player victory

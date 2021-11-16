@@ -1,3 +1,8 @@
 // desde que el player inicie acción hasta el final del juego
-import * as STADISTICS from '/modules/my-module.js';
-console.log(monster());
+
+// accion jugador
+
+// accion monstruo
+
+// que ha pasado ?
+// estadisticas
