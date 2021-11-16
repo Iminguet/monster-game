@@ -1,18 +1,13 @@
-// Conseguir nombre del monstruo
-// const numberOfMonsters = () => {
-//   const nMonst = parseInt(Math.random() * 1) + 3;
-//   for (let units = 0; units < nMonst; units++) {
-//     const mName = [('Gwyn', 'Orstein', 'Smoug')];
-//     console.log(mName);
-//   }
-// };
+const defaultNames = ['Gwyn', 'Furtivo pigmeo', 'Izalith'];
 
-// numberOfMonsters();
+const monsters = [];
 
-// Objeto monster
+const numberOfMonsters = Math.floor(Math.random() * (2 - 0 + 1) + 0);
 
-// constructor function
-let monsterName = 'Antofagasto';
+for (let i = 0; i <= numberOfMonsters; i++) {
+  const newMonster = new Monster(defaultNames[i]);
+  monsters.push(newMonster);
+}
 
 function Monster(monsterName) {
   this.name = monsterName;
@@ -20,49 +15,58 @@ function Monster(monsterName) {
   this.monsterMaxAttack = 20;
   this.monsterMinAttack = 10;
   this.damage = () => {
-    return Math.floor(
+    return parseInt(
       Math.random() * (this.monsterMaxAttack - this.monsterMinAttack + 1) +
         this.monsterMinAttack
     );
   };
 }
+
+const monster = monsters.pop();
+
 // Creando monstruos, listado y asociando
-const defaultNames = ['Gwyn', 'Orstein', 'Smoug', 'Izalith', 'Nito'];
-const monstruos = [];
-const numeroMonstros = parseInt(Math.random() * 3) + 1;
-for (let i = 0; i <= numeroMonstros; i++) {
-  const nuevoMOnstruo = new Monster(defaultNames[i]);
-  monstruos.push(nuevoMOnstruo);
-}
+
 // ataque monster
-console.log(monstruos[0].damage());
+// console.log(monstruos[0].damage());
 
 // objeto player
 const player = {
   name: 'pname',
   health: 100,
   potion: 2,
-  damage: () => parseInt(Math.random() * 10) + 10,
+  MaximunAttack: 20,
+  MinimunAttack: 10,
+  damage: () =>
+    parseInt(
+      Math.random() * (player.MaximunAttack - player.MinimunAttack + 1) +
+        player.MinimunAttack
+    ),
 };
 
 // prueba DE DAÑO A OBJETO PLAYER
-console.log(player.health);
-player.health = player.health - monstruos[0].damage();
-console.log(player.health);
+// console.log(player.health);
+// player.health = player.health - monstruos[0].damage();
+// console.log(player.health);
 ///////////////////////////////////
 
 // prueba de como baja la salud
 
-const mon02 = monstruos.pop();
-
-while (player.health > 0 && mon02.health > 0) {
-  mon02.health = mon02.health - player.damage();
-  if (mon02.health > 0) {
-    player.health = player.health - mon02.damage();
+while (player.health > 0 && monster.health > 0) {
+  monster.health = monster.health - player.damage();
+  if (monster.health > 0) {
+    player.health = player.health - monster.damage();
   }
 
-  console.log(' esto es el daño recibdo por monter', mon02.health);
-  console.log('Este es el dañor recibido por player', player.health);
+  console.log(
+    `Salud de ${monster.name} ES: ${
+      monster.health
+    } \n JUgador ha dado un golpe de ${player.damage()} \nla salud despues del golpe es: ${
+      monster.health
+    }`
+  );
+  // console.log('Daño hecho por monster', mon02.damage());
+  // console.log('Este es el dañor recibido por player', player.health);
+  // console.log('Daño hecho por player', player.damage());
 }
 
 // mensajes
