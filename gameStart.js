@@ -1,4 +1,6 @@
-export { heroName };
+export { heroName, action };
+import { playerAction } from './player_monster_actions.js';
+import { player } from './player.js';
 
 // // Principio del juego, hasta que el player inicie acción
 // HOla, quieres elegir un nombre ?
@@ -16,5 +18,49 @@ export { heroName };
 //   pego / uso poción
 
 // Esto ha pasado.
+//
+// ********************************************//
+// *
+// *
+// *
+// * De momento, hacer esto en un solo archivo.
+// *
+// *
+// function startGame() {
+//   // Obtener nombre player()
+//   // Crear Player()
+//   // Calcular num monstruos
+//   //
+//   // Loop
+//   //** Obtener nombre monstruo
+//   //** Crear monstruo
+// }
+// // parametros de entrada y salida, y sin var globales.
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// **********************************************//
+startGame();
 
-const heroName = 'Arcadio';
+const heroName = prompt('Introduce el nombre del héroe', 'Arcadio');
+player.name = heroName;
+console.log(`El nombre del héroe es: ${player.name}`);
+
+function action() {
+  const playerOption = prompt('Write A to attack or H to heal');
+  return playerAction(playerOption);
+}
+
+function gaming() {
+  action();
+  playerAction();
+  monsterAttack();
+}
+
+// use callbacks functions
+// include logs

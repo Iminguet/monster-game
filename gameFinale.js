@@ -46,20 +46,19 @@ function wait2Seconds() {
   setTimeout(2000);
 }
 
-
 const showGameOverMessage = () => {
   //Esperar 2 segundos
   console.log('GAME OVER');
 };
 
 // objeto estadisticas globales
-const globalStadistics = 
-  [playerAttacks, []]; //0
+const globalStadistics = [
+  [playerAttacks, []], //0
   [monstersAttacks, []], //1
   [potionsConsumed, []], //2
   [playerTotalDamage, []], //3
   [monstersTotalDamage, []], //4
-;
+];
 
 // objeto estadisticas por round
 

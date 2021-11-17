@@ -1,14 +1,13 @@
 import { player, healing } from './player.js';
 import { monster } from './monsters.js';
-// export { managemenstadistics };
-export { playerAttack };
-import { globalStadistics } from './gameFinale.js';
+export { playerAttack, playerAction };
 
 // Función para preguntar sobre la acción que quiere realizar player
 // H --> hEALTH
-// A  --> ATTACK
-function playerAction(pregunta) {
-  if (pregunta === 'H') {
+// A --> ATTACK
+
+function playerAction(playerOption) {
+  if (playerOption === 'H') {
     healing();
   } else {
     playerAttack();
@@ -39,11 +38,6 @@ function monsterAttack() {
 // console.log(player.damage);
 
 // campo de pruebas
-playerAction('h');
-console.log('salud de player' + player.health + '\n');
-console.log(`DAÑO HECHO POR MONSTRUYO ${monsterAttack()}`);
-
-console.log(`salud de ${player.name} =` + player.health + '\n');
 
 // player.health = player.health - monstruos[0].damage();
 // console.log(player.health);
