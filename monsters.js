@@ -1,7 +1,6 @@
-// Function that chooses the number of monsters to be confronted
-
 export { monster };
-
+// Function that chooses the number of monsters to be confronted
+//
 function randomlyGeneratedNumberOfMonsters() {
   return Math.floor(Math.random() * (2 - 0 + 1) + 0);
 }
@@ -28,12 +27,14 @@ function createMonsters() {
 //***************************************************************************/
 
 // Here, saving the result of the createMOnsters function in variable
+//
 let monstersToFRont = createMonsters();
 
 // Extracting monsters from monsters ARRAY
+//
 const monster = monstersToFRont.pop();
 
-// MOnster constructor.
+// Monster constructor.
 //
 function Monster(monsterName) {
   this.name = monsterName;

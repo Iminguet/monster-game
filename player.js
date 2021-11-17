@@ -1,10 +1,12 @@
 // Player object
 //
 export { player, healing };
-import { playerAttack } from './player_monster_actions.mjs';
+import { heroName } from './gameStart.js';
+import { playerAttack } from './player_monster_actions.js';
 //
+
 const player = {
-  name: 'pname',
+  name: heroName,
   health: 100,
   potion: 2,
   MaximunAttack: 20,
@@ -15,6 +17,7 @@ const player = {
         player.MinimunAttack
     ),
 };
+console.log(player.name);
 
 // Healing funtcion and consecuences of dont have enougth potions
 // take care of the healt dont be much than 100.

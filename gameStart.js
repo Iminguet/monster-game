@@ -1,3 +1,5 @@
+export { heroName };
+
 // // Principio del juego, hasta que el player inicie acción
 // HOla, quieres elegir un nombre ?
 
@@ -14,3 +16,5 @@
 //   pego / uso poción
 
 // Esto ha pasado.
+
+const heroName = 'Arcadio';
