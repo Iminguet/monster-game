@@ -3,11 +3,13 @@
 export { player, healing };
 import { playerAttack } from './player_monster_actions.js';
 //
+// player name con valor por defecto tu09 p38
+//
 
 const player = {
   name: '',
   health: 100,
-  potion: 2,
+  potion: 2, // use counter -- para restar el número de pociones. tu04 pagina30
   MaximunAttack: 20,
   MinimunAttack: 10,
   damage: () =>

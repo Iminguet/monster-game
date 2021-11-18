@@ -1,4 +1,3 @@
-export { heroName, action };
 import { playerAction } from './player_monster_actions.js';
 import { player } from './player.js';
 
@@ -35,6 +34,7 @@ import { player } from './player.js';
 //   //** Obtener nombre monstruo
 //   //** Crear monstruo
 // }
+// startGame();
 // // parametros de entrada y salida, y sin var globales.
 // *
 // *
@@ -45,7 +45,6 @@ import { player } from './player.js';
 // *
 // *
 // **********************************************//
-startGame();
 
 const heroName = prompt('Introduce el nombre del héroe', 'Arcadio');
 player.name = heroName;
@@ -63,4 +62,15 @@ function gaming() {
 }
 
 // use callbacks functions
+test('7 is odd', () => {
+  expect(isEven(7)).toBe(false);
+});
+
+function pregunta(heroName, si, no) {
+  if (heroName(true)) si();
+  else no();
+}
+
 // include logs
+
+export { heroName, action };

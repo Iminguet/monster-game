@@ -1,0 +1,19 @@
+{
+  "name": "monster_game",
+  "version": "1.0.0",
+  "description": "This is a repository to work in the  \"Monster game\" project. 2DAW WD CLIENT SIDE IES Maria Enriquez 2021 NONE FUNCTIONAL REQUIREMENTS:",
+  "main": "monster_game.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iminguet/monster-game.git"
+  },
+  "author": "Israel Minguet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iminguet/monster-game/issues"
+  },
+  "homepage": "https://github.com/Iminguet/monster-game#readme"
+}

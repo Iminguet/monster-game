@@ -52,6 +52,9 @@ const showGameOverMessage = () => {
 };
 
 // objeto estadisticas globales
+//
+// Usar rest tu09 p20 para calcular el número de elementos del array si saberlo, y poder manjearlo.
+//
 const globalStadistics = [
   [playerAttacks, []], //0
   [monstersAttacks, []], //1
