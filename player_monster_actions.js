@@ -1,22 +1,28 @@
-function playerAction(playerOption) {
-  switch (playerOption) {
-    case H:
-      // healing();
-      alert('sana sana culito de rana');
-      break;
-    case A:
-      // attack();
-      alert('quieres sentill en el pecho?');
-      break;
+import { heroStorage, healing } from './player.js';
 
+function playerAction(sel, ourHero, monstersArray) {
+  const upper = sel.toUpperCase();
+  switch (upper) {
+    case 'H':
+      alert('sana sana culito de rana');
+      healing(ourHero);
+      break;
+    case 'A': //////////////_____aquí______// hacer una callback que separe a los mosntruos y devolverla aquí
+      playerAttack(ourHero, monstersArray);
+      alert('quieres sentil·la en el pescho?');
+      break;
     default:
-      alert('esta vida loca');
+      const invalidCharacter = prompt(
+        'Valor incorrecto, introduce un caracter válido'
+      );
+      playerAction(invalidCharacter);
       break;
   }
 }
+
 // Ataque de player
 //
-function playerAttack() {
+function playerAttack(player, monster = selectone()) {
   const playerHit = player.damage();
   monster.health = monster.health - playerHit;
   return monster.health;

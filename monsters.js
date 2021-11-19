@@ -28,12 +28,6 @@ function createMonsters(maxMonsters, minMonsters) {
   return monsters;
 }
 
-function showMonstersName(monstersArray) {
-
-  monstersArray.forEach(enemy => {const showNames=
-    
-  });
-}
 //namename
 // ****** BORRADOR *******
 //
@@ -66,4 +60,4 @@ function Monster(monsterName) {
   };
 }
 
-export { createMonsters };
+export { createMonsters, monstersToFRont };

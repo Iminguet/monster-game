@@ -1,4 +1,5 @@
 import { playerAttack } from './player_monster_actions.js';
+
 //
 // player name con valor por defecto tu09 p38
 //
@@ -11,25 +12,37 @@ function GameHero(heroName) {
   this.manimunAttack = 10;
   this.damage = () =>
     parseInt(
-      Math.random() * (player.MaximunAttack - player.MinimunAttack + 1) +
-        player.MinimunAttack
+      Math.random() * (this.MaximunAttack - this.MinimunAttack + 1) +
+        this.MinimunAttack
     );
 }
 
+function heroStorage(a) {
+  const hero = a;
+  return hero;
+}
 // Healing function and consecuences of dont have enougth potions
 // take care of the healt dont be much than 100.
-function healing() {
-  if (enougthPotions(true)) {
-    player.health += 70;
-    if (player.health >= 100) {
-      player.health = 100;
+function healing(who) {
+  if (enougthPotions(who) == true) {
+    who.health += 70;
+    showPlayerHealth(who);
+    if (who.health >= 100) {
+      who.health = 100;
+      showPlayerHealth(who);
     }
   } else {
+    alert('No hay pociones, toca huida hacia delante');
     playerAttack();
   }
+  return;
 }
-// Function to validate if there is potions available
-function enougthPotions() {
-  return player.potion >= 1 ? true : false;
+function showPlayerHealth(who) {
+  alert(who.health);
 }
-export { GameHero };
+
+function enougthPotions(who) {
+  who.potion >= 1 ? true : false;
+  return;
+}
+export { GameHero, healing, heroStorage };
