@@ -1,18 +1,18 @@
-import { player, healing } from './player.js';
-import { monster } from './monsters.js';
-export { playerAttack, playerAction };
-
-// Función para preguntar sobre la acción que quiere realizar player
-// H --> hEALTH
-// A --> ATTACK
-
 function playerAction(playerOption) {
-  if (playerOption === 'H') {
-    healing();
-  } else {
-    playerAttack();
+  switch (playerOption) {
+    case H:
+      // healing();
+      alert('sana sana culito de rana');
+      break;
+    case A:
+      // attack();
+      alert('quieres sentill en el pecho?');
+      break;
+
+    default:
+      alert('esta vida loca');
+      break;
   }
-  return playerAttack();
 }
 // Ataque de player
 //
@@ -43,3 +43,5 @@ function monsterAttack() {
 // console.log(player.health);
 ///////////////////////////////////
 // managemenstadistics();
+
+export { playerAttack, playerAction };

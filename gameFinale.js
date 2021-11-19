@@ -1,6 +1,3 @@
-import { player } from './player.js';
-import { monster } from './monsters.js';
-import { heroName } from './gameStart.js';
 export { globalStadistics, roundStadistics };
 
 // import { managemenstadistics } from './player_monster_actions.mjs';
@@ -55,24 +52,25 @@ const showGameOverMessage = () => {
 //
 // Usar rest tu09 p20 para calcular el número de elementos del array si saberlo, y poder manjearlo.
 //
-const globalStadistics = [
-  [playerAttacks, []], //0
-  [monstersAttacks, []], //1
-  [potionsConsumed, []], //2
-  [playerTotalDamage, []], //3
-  [monstersTotalDamage, []], //4
-];
+const globalStadistics = {
+  playerAttacks: [], //0
+  monstersAttacks: [], //1
+  potionsConsumed: [], //2
+  playerTotalDamage: [], //3
+  monstersTotalDamage: [], //4
+};
 
 // objeto estadisticas por round
+//
 
-const roundStadistics = [
-  [playerName, heroName], //0
-  [playerHealth, player.health], //1
-  [remainingPotions, player.potion], //2
-  [monsterName, monster.name], //3
-  [monsterHealth, monster.health], //4
-  [remainingMonsters, []], //5
-];
+const roundStadistics = {
+  playerName: '', //0
+  playerHealt: [], //1
+  remainingPotions: [], //2
+  monsterName: monstername, //3
+  monsterHealth: monsterhealth, //4
+  remainingMonsters: [], //5
+};
 
 // ¿ Nested functions para conservar el valor del daño ? TU 15  P07
 // function playerAction_nested() {

@@ -1,8 +1,7 @@
-export { monster };
-// Function that chooses the number of monsters to be confronted
-//
-function randomlyGeneratedNumberOfMonsters() {
-  return Math.floor(Math.random() * (2 - 0 + 1) + 0);
+function randomlyGeneratedNumberOfMonsters(maxMonsters, minMonsters) {
+  return (
+    Math.floor(Math.random() * (maxMonsters - minMonsters + 1)) + minMonsters
+  );
 }
 // useoperator || para elegir nombre del onstruo.
 //tu04 p44
@@ -14,19 +13,28 @@ function randomlyGeneratedNumberOfMonsters() {
 //
 //  Create monster function
 //
-let ask = 'jola';
-console.log(ask);
-function createMonsters() {
+
+function createMonsters(maxMonsters, minMonsters) {
   const defaultNames = ['Gwyn', 'FurtivoPigmeo', 'Izalith'];
   const monsters = [];
-  for (let i = 0; i <= randomlyGeneratedNumberOfMonsters(); i++) {
+  const numMonsters = randomlyGeneratedNumberOfMonsters(
+    maxMonsters,
+    minMonsters
+  );
+  for (let i = 0; i <= numMonsters; i++) {
     const newMonster = new Monster(defaultNames[i]);
     monsters.push(newMonster);
   }
   return monsters;
 }
 
-//
+function showMonstersName(monstersArray) {
+
+  monstersArray.forEach(enemy => {const showNames=
+    
+  });
+}
+//namename
 // ****** BORRADOR *******
 //
 //
@@ -57,3 +65,5 @@ function Monster(monsterName) {
     );
   };
 }
+
+export { createMonsters };
