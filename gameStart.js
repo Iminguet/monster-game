@@ -1,6 +1,6 @@
 import { playerAction } from './player_monster_actions.js';
-import { createMonsters, monstersToFRont } from './monsters.js';
-import { GameHero, heroStorage } from './player.js';
+import { createMonsters } from './monsters.js';
+import { GameHero } from './player.js';
 
 // * De momento, hacer esto en un solo archivo.
 // *
