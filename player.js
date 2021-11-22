@@ -1,10 +1,12 @@
+import { playerAttack } from './player_monster_actions.js';
+
 //
 // player name con valor por defecto tu09 p38
 //
 
 function GameHero(heroName) {
   this.name = heroName;
-  this.health = 100;
+  this.health = 1;
   this.potion = 2; // use counter -- para restar el número de pociones. tu04 pagina30
   this.maximunAttack = 20;
   this.manimunAttack = 10;
@@ -21,10 +23,9 @@ function healing(ourHero) {
   if (enougthPotions(ourHero) == true) {
     ourHero.health += 70;
     showPlayerHealth(ourHero);
-    if (ourHero.health >= 100) {
-      ourHero.health = 100;
-      showPlayerHealth(ourHero);
-    }
+  } else if (ourHero.health >= 100) {
+    ourHero.health = 100;
+    showPlayerHealth(ourHero);
   } else {
     alert('No hay pociones, toca huida hacia delante');
     playerAttack();
