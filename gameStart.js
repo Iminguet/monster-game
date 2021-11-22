@@ -1,6 +1,27 @@
+<<<<<<< HEAD
 import { manageCharacters } from './player_monster_actions.js';
 import { createMonsters } from './monsters.js';
 import { GameHero } from './player.js';
+=======
+import { playerAction } from './player_monster_actions.js';
+import { createMonsters } from './monsters.js';
+import { GameHero } from './player.js';
+
+// * De momento, hacer esto en un solo archivo.
+// *
+// *
+//  function startGame() {
+//   // Obtener nombre player()
+//   // Crear Player()
+//   // Calcular num monstruos
+//   //
+//   // Loop
+//   //** Obtener nombre monstruo
+//   //** Crear monstruo
+// }
+// startGame();
+// // parametros de entrada y salida, y sin var globales.
+>>>>>>> 820fdfd026bbe8cd763c86a0d504fb9aef7d33c9
 
 const heroName = prompt('Introduce el nombre del héroe', 'Anonymous');
 
