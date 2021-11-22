@@ -1,6 +1,16 @@
-import { heroStorage, healing } from './player.js';
+import { healing } from './player.js';
 
-function playerAction(sel, ourHero, monstersArray) {
+function manageCharacters(hSel, hObj, monsArr) {
+  popMonster(monsArr);
+  playerAction(hSel, hObj);
+}
+
+function popMonster(monstersArray) {
+  const monster = monstersArray.pop();
+  return monster;
+}
+
+function playerAction(sel, ourHero, enemy) {
   const upper = sel.toUpperCase();
   switch (upper) {
     case 'H':
@@ -8,46 +18,38 @@ function playerAction(sel, ourHero, monstersArray) {
       healing(ourHero);
       break;
     case 'A': //////////////_____aquí______// hacer una callback que separe a los mosntruos y devolverla aquí
-      playerAttack(ourHero, monstersArray);
+      playerAttack(ourHero, popMonster);
       alert('quieres sentil·la en el pescho?');
+      break;
+    case 'uuddlrlrba':
+      alert('A fer la má');
+      playerWIn();
       break;
     default:
       const invalidCharacter = prompt(
-        'Valor incorrecto, introduce un caracter válido'
+        'Valor incorrecto, introduce un caracter válido',
+        'A to attack - H to healing'
       );
-      playerAction(invalidCharacter);
+
+      playerAction(invalidCharacter, '');
       break;
   }
+  monsterAttack(popMonster, ourHero);
 }
 
 // Ataque de player
 //
-function playerAttack(player, monster = selectone()) {
+function playerAttack(player, monster) {
   const playerHit = player.damage();
-  monster.health = monster.health - playerHit;
-  return monster.health;
+
+  return (monster.health = monster.health - playerHit);
 }
 // ataque de monster
 //
-function monsterAttack() {
+function monsterAttack(monster, player) {
   const monsterHit = monster.damage();
   player.health = player.health - monsterHit;
   return player.health;
 }
 
-// funcion para quitar el .push(hit) de dentro de las funciones de  ataques
-//
-// function managemenstadistics() {
-//   globalStadistics.playerTotalDamage.push(playerHit));
-//   monster.damage().push(globalStadistics.monstersTotalDamage());
-// }
-// console.log(player.damage);
-
-// campo de pruebas
-
-// player.health = player.health - monstruos[0].damage();
-// console.log(player.health);
-///////////////////////////////////
-// managemenstadistics();
-
-export { playerAttack, playerAction };
+export { playerAttack, manageCharacters };

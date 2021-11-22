@@ -1,8 +1,6 @@
-// desde que el player inicie acción hasta el final del juego
+import { playerAttack } from './player_monster_actions';
 
-// accion jugador
-
-// accion monstruo
-
-// que ha pasado ?
-// estadisticas
+function round(monster, player) {
+  if 
+  function estadisticas(params) {}
+}

@@ -39,11 +39,6 @@ function createMonsters(maxMonsters, minMonsters) {
 
 // Here, saving the result of the createMOnsters function in variable
 //
-let monstersToFRont = createMonsters();
-
-// Extracting monsters from monsters ARRAY
-//
-const monster = monstersToFRont.pop();
 
 // Monster constructor.
 //
@@ -60,4 +55,4 @@ function Monster(monsterName) {
   };
 }
 
-export { createMonsters, monstersToFRont };
+export { createMonsters };

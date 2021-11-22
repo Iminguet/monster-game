@@ -6,7 +6,7 @@ import { playerAttack } from './player_monster_actions.js';
 
 function GameHero(heroName) {
   this.name = heroName;
-  this.health = 100;
+  this.health = 1;
   this.potion = 2; // use counter -- para restar el número de pociones. tu04 pagina30
   this.maximunAttack = 20;
   this.manimunAttack = 10;
@@ -17,20 +17,15 @@ function GameHero(heroName) {
     );
 }
 
-function heroStorage(a) {
-  const hero = a;
-  return hero;
-}
 // Healing function and consecuences of dont have enougth potions
 // take care of the healt dont be much than 100.
-function healing(who) {
-  if (enougthPotions(who) == true) {
-    who.health += 70;
-    showPlayerHealth(who);
-    if (who.health >= 100) {
-      who.health = 100;
-      showPlayerHealth(who);
-    }
+function healing(ourHero) {
+  if (enougthPotions(ourHero) == true) {
+    ourHero.health += 70;
+    showPlayerHealth(ourHero);
+  } else if (ourHero.health >= 100) {
+    ourHero.health = 100;
+    showPlayerHealth(ourHero);
   } else {
     alert('No hay pociones, toca huida hacia delante');
     playerAttack();
@@ -45,4 +40,4 @@ function enougthPotions(who) {
   who.potion >= 1 ? true : false;
   return;
 }
-export { GameHero, healing, heroStorage };
+export { GameHero, healing };
