@@ -6,7 +6,7 @@ function manageCharacters(hSel, hObj, monsArr) {
 }
 
 function popMonster(monstersArray) {
-  const monster = monstersArray.pop();
+  for (const monster of monstersArray);
   return monster;
 }
 
@@ -19,7 +19,7 @@ function playerAction(sel, ourHero, enemy) {
       break;
     case 'A': //////////////_____aquí______// hacer una callback que separe a los mosntruos y devolverla aquí
       playerAttack(ourHero, popMonster);
-      alert('quieres sentil·la en el pescho?');
+      alert(`${ourHero.name} hits ${popMonster.name}`);
       break;
     case 'uuddlrlrba':
       alert('A fer la má');
@@ -40,14 +40,14 @@ function playerAction(sel, ourHero, enemy) {
 // Ataque de player
 //
 function playerAttack(player, monster) {
-  const playerHit = player.damage();
+  const playerHit = player.damage;
 
   return (monster.health = monster.health - playerHit);
 }
 // ataque de monster
 //
 function monsterAttack(monster, player) {
-  const monsterHit = monster.damage();
+  const monsterHit = monster.damage;
   player.health = player.health - monsterHit;
   return player.health;
 }
