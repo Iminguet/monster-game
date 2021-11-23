@@ -19,25 +19,25 @@ function GameHero(heroName) {
 
 // Healing function and consecuences of dont have enougth potions
 // take care of the healt dont be much than 100.
-function healing(ourHero) {
+function healing(ourHero, actualMonster) {
   if (enoughPotions(ourHero) === true) {
     ourHero.health += 70;
     ourHero.potion -= 1;
-    showPlayerHealth(ourHero);
-  } else if (ourHero.health >= 100) {
-    ourHero.health = 100;
+    if (ourHero.health > 100) {
+      ourHero.health = 100;
+    }
     showPlayerHealth(ourHero);
   } else {
-    alert('No hay pociones, toca huida hacia delante');
-    playerAttack();
+    alert('THere is no potions, desperate struggle');
+    playerAttack(ourHero, actualMonster);
   }
   return;
 }
-function showPlayerHealth(who) {
-  alert(who.health);
+function showPlayerHealth(ourHero) {
+  alert(ourHero.health);
 }
 
-function enoughPotions(who) {
-  return who.potion >= 1 ? true : false;
+function enoughPotions(ourHero) {
+  return ourHero.potion >= 1 ? true : false;
 }
 export { GameHero, healing };

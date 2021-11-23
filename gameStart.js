@@ -15,6 +15,7 @@ function startGame(nameHeroInput) {
     playerAction(selection, hero, monster);
     console.log(`${monster.name} health is:${monster.health}. \n 
     ${hero.name} health is: ${hero.health}.`);
+    // roundStatus();
     if (monster.health > 0) {
       monsters.push(monster);
     }
