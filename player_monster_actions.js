@@ -17,10 +17,12 @@ function playerAction(sel, ourHero, enemy) {
       playerWIn();
       break;
     default:
-      alert(
+      const invalidCharacter = prompt(
         'Valor incorrecto, introduce un caracter válido',
         'A to attack - H to healing'
       );
+
+      playerAction(invalidCharacter, '', '');
       break;
   }
   if (enemy.health > 0) {
