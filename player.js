@@ -28,13 +28,13 @@ function healing(ourHero, actualMonster) {
     }
     showPlayerHealth(ourHero);
   } else {
-    alert('THere is no potions, desperate struggle');
+    console.log('THere is no potions, desperate struggle');
     playerAttack(ourHero, actualMonster);
   }
   return;
 }
 function showPlayerHealth(ourHero) {
-  alert(ourHero.health);
+  console.log(ourHero.health);
 }
 
 function enoughPotions(ourHero) {

@@ -13,9 +13,9 @@ function startGame(nameHeroInput) {
     const monster = monsters.pop();
     const selection = prompt('Choose H to heal or A to attack');
     playerAction(selection, hero, monster);
-    console.log(`${monster.name} health is:${monster.health}. \n 
+    console.log(`${monster.name} health is:${monster.health}.\n 
+    there is ${monsters.length} monsters yet.
     ${hero.name} health is: ${hero.health}.`);
-    // roundStatus();
     if (monster.health > 0) {
       monsters.push(monster);
     }

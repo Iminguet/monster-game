@@ -10,10 +10,10 @@ function playerAction(sel, ourHero, enemy) {
       break;
     case 'A':
       playerAttack(ourHero, enemy);
-      alert(`${ourHero.name} hits ${enemy.name}`);
+      console.log(`${ourHero.name} hits ${enemy.name}`);
       break;
     case 'uuddlrlrba':
-      alert('A fer la má');
+      console.log('A fer la má');
       playerWIn();
       break;
     default:
@@ -30,18 +30,19 @@ function playerAction(sel, ourHero, enemy) {
 //   console.log(`Round Status`);
 //   console.log(playerRoundWarehouse);
 //   console.log(monsterRoundWarehouse);
+//   console.log('Probando la flechA');
 // }
 
-function playerRoundWarehouse(player, playerDamage) {
+const playerRoundWarehouse = (player, playerDamage) => {
   return console.log(
     `${player.name} -D: ${playerDamage}, H:${player.health}, P:${player.potion}`
   );
-}
-function monsterRoundWarehouse(monster, monsterDamage) {
+};
+const monsterRoundWarehouse = (monster, monsterDamage) => {
   return console.log(
     `${monster.name} -D: ${monsterDamage}, H:${monster.health}.`
   );
-}
+};
 
 function playerAttack(player, monster) {
   const playerHit = player.damage();
